@@ -40,6 +40,7 @@
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
             <version>${commons-httpclient.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>

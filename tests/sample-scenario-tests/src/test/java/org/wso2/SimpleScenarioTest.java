@@ -36,7 +36,8 @@ public class SimpleScenarioTest {
     @Test
     public void testEndpoint() {
         HttpClient client = new HttpClient();
-        HttpMethod method = new GetMethod(System.getProperty("endpoint"));
+        String deployedAPI = "/helloworld";
+        HttpMethod method = new GetMethod(System.getProperty("endpoint") + deployedAPI);
         try {
             int statusCode = client.executeMethod(method);
             Assert.assertEquals(statusCode, HttpStatus.SC_OK);

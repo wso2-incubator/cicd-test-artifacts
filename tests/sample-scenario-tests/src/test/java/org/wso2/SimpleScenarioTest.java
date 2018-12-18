@@ -37,13 +37,16 @@ public class SimpleScenarioTest {
     public void testEndpoint() {
         HttpClient client = new HttpClient();
         String deployedAPI = "/helloworld";
-        HttpMethod method = new GetMethod(System.getProperty("endpoint") + deployedAPI);
+        int statusCode = -1;
+        String uri = System.getProperty("endpoint") + deployedAPI;
+        System.err.println(uri);
+        HttpMethod method = new GetMethod(uri);
         try {
-            int statusCode = client.executeMethod(method);
-            Assert.assertEquals(statusCode, HttpStatus.SC_OK);
+            statusCode = client.executeMethod(method);
         } catch (HttpException e) {
             System.err.println("Fatal protocol violation: " + e.getMessage());
             e.printStackTrace();
+            //System.exit();
         } catch (IOException e) {
             System.err.println("Fatal transport error: " + e.getMessage());
             e.printStackTrace();
@@ -51,6 +54,7 @@ public class SimpleScenarioTest {
             // Release the connection.
             method.releaseConnection();
         }
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
     }
 
 }

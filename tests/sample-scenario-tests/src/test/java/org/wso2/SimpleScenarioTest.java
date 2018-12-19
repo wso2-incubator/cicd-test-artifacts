@@ -24,6 +24,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class tests the HelloWorld Rest endpoint
@@ -37,7 +38,7 @@ public class SimpleScenarioTest {
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
         System.err.println(uri);
-        Thread.sleep(3000);
+        TimeUnit.MINUTES.sleep(1);
         HttpMethod method = new GetMethod(uri);
         System.err.println(method);
         try {

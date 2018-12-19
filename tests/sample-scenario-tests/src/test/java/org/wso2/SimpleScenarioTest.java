@@ -34,19 +34,20 @@ import java.io.IOException;
 
 public class SimpleScenarioTest {
     @Test
-    public void testEndpoint() {
+    public void testEndpoint() throws InterruptedException{
         HttpClient client = new HttpClient();
         String deployedAPI = "/helloworld";
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
         System.err.println(uri);
         HttpMethod method = new GetMethod(uri);
+        Thread.sleep(3000);
+        System.err.println(method);
         try {
             statusCode = client.executeMethod(method);
         } catch (HttpException e) {
             System.err.println("Fatal protocol violation: " + e.getMessage());
             e.printStackTrace();
-            //System.exit();
         } catch (IOException e) {
             System.err.println("Fatal transport error: " + e.getMessage());
             e.printStackTrace();

@@ -37,10 +37,8 @@ public class SimpleScenarioTest {
         String deployedAPI = "/helloworld";
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
-        System.err.println(uri);
         TimeUnit.MINUTES.sleep(1);
         HttpMethod method = new GetMethod(uri);
-        System.err.println(method);
         try {
             statusCode = client.executeMethod(method);
         } catch (HttpException e) {

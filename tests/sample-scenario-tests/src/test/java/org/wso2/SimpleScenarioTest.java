@@ -18,10 +18,7 @@
  */
 package org.wso2;
 
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -40,8 +37,8 @@ public class SimpleScenarioTest {
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
         System.err.println(uri);
-        HttpMethod method = new GetMethod(uri);
         Thread.sleep(3000);
+        HttpMethod method = new GetMethod(uri);
         System.err.println(method);
         try {
             statusCode = client.executeMethod(method);

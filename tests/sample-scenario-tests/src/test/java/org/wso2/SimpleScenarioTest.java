@@ -53,5 +53,4 @@ public class SimpleScenarioTest {
         }
         Assert.assertEquals(statusCode, HttpStatus.SC_OK);
     }
-
 }

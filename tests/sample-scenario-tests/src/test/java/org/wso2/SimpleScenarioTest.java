@@ -34,9 +34,8 @@ public class SimpleScenarioTest {
     @Test
     public void testEndpoint() throws InterruptedException{
         HttpClient client = new HttpClient();
-        String deployedAPI = "/helloworld";
+        String deployedAPI = "/helloworld_staging";
         int statusCode = -1;
-        //test push
         String uri = System.getProperty("endpoint") + deployedAPI;
         TimeUnit.MINUTES.sleep(1);
         HttpMethod method = new GetMethod(uri);

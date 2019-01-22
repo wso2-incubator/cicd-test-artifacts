@@ -31,4 +31,4 @@ mvn test -Dendpoint=<ENDPOINT>
 ```
 Implement a new scenario test for the new car 
 
-* Configure this repository as the artifacts repository in the Jenkins CICD pipeline.
+* Configure this repository as the artifacts repository in the Jenkins CICD pipeline

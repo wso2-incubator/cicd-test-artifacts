@@ -17,10 +17,10 @@
 -->
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Sample-test-suite" verbose="1" >
+<suite name="Sample-test-suite-wso2is" verbose="1" >
     <test name="HTTP backend test" >
         <classes>
-            <class name="org.wso2.SimpleScenarioTest" />
+            <class name="org.wso2.isTest" />
         </classes>
     </test>
 </suite>

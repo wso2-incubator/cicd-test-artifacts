@@ -1,34 +1,12 @@
-# cicd-test-artifacts
+## Sample artifact resources for AWS Pipeline
 
-This repository holds artifacts and scenario tests..
+Sample product artifacts and and sample test cases for WSO2 products. This repository is used as the sample for artifacts repository in WSO2 AWS pipeline.
 
-
-#### Directory structure
-```
-.
-├── artifacts
-│   └── repository
-│       └── deployment
-│           └── server
-│               └── carbonapps
-└── tests
-    └── sample-scenario-tests
-        ├── src
-           └── test
-               ├── java
-               │   └── org
-               │       └── wso2
-               └── resources
-```
-
-#### Quick Start Guide
+#### Add new artifacts 
 * Place the car file in `artifacts/deployment/server/carbonapps/` directory.
 
-* A sample scenario test suite implemented using Testng is in `test/sample-scenario-tests` directory. Which run a 
+* A sample scenario test suite implemented using Testng is in `test/{product}/sample-test-suite{product}` directory. This run a 
 simple test to validate response code of a rest endpoint. Use following command to run the test,
 ```
 mvn test -Dendpoint=<ENDPOINT>
 ```
-Implement a new scenario test for the new car 
-
-* Configure this repository as the artifacts repository in the Jenkins CICD pipeline

@@ -47,7 +47,8 @@ import java.util.concurrent.TimeUnit;
 public class isTest {
     @Test public void testEndpoint() throws InterruptedException {
 
-        String uri = System.getProperty("endpoint");
+        String uri = "http://WSO2LoadBalancer-Dev-2064492480.us-west-1.elb.amazonaws.com:8280";
+        String carbonUri = "https:"+ uri.split(":")[1] + "/carbon";
         TimeUnit.MINUTES.sleep(1);
 
         TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {

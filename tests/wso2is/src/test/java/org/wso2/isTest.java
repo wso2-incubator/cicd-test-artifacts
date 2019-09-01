@@ -48,6 +48,7 @@ public class isTest {
     @Test public void testEndpoint() throws InterruptedException {
 
         String uri = System.getProperty("endpoint");
+        String carbonUri = "https:"+ uri.split(":")[1] + "/carbon";
         TimeUnit.MINUTES.sleep(1);
 
         TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
@@ -82,7 +83,7 @@ public class isTest {
         int code = -1;
 
         try {
-            URL url = new URL(uri);
+            URL url = new URL(carbonUri);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();

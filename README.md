@@ -1,6 +1,6 @@
 # cicd-test-artifacts
 
-This repository holds artifacts and scenario tests.
+This repository holds artifacts and scenario tests..
 
 
 #### Directory structure

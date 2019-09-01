@@ -83,7 +83,7 @@ public class isTest {
         int code = -1;
 
         try {
-            URL url = new URL(uri);
+            URL url = new URL(carbonUri);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();

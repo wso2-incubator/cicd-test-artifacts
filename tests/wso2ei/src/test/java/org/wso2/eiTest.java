@@ -42,6 +42,7 @@ public class eiTest {
         String deployedAPI = "/helloworld";
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
+        System.out.println(uri);
         TimeUnit.MINUTES.sleep(2);
         HttpMethod method = new GetMethod(uri);
         try {

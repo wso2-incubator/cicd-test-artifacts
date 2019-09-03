@@ -43,7 +43,7 @@ public class eiTest {
         int statusCode = -1;
         String uri = System.getProperty("endpoint") + deployedAPI;
         System.out.println(uri);
-        TimeUnit.MINUTES.sleep(2);
+        TimeUnit.MINUTES.sleep(5);
         HttpMethod method = new GetMethod(uri);
         try {
             statusCode = client.executeMethod(method);

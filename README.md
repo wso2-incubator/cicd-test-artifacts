@@ -24,4 +24,3 @@ simple test to validate response code of a rest endpoint. Use following command 
 ```
 mvn test -Dendpoint=<ENDPOINT>
 ```
-

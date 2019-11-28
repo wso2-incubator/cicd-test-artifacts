@@ -2,10 +2,12 @@
 
 ARTIFACT_LOCATION=${ARTIFACT_LOC}
 
-if [ -d "$ARTIFACT_LOCATION/helloworld/artifacts" ]; then
+cd $ARTIFACT_LOCATION/helloworld/
+
+if [ -d "artifacts" ]; then
         rm -rf $ARTIFACT_LOCATION/helloworld/artifacts/*
 else
-        mkdir -p $ARTIFACT_LOCATION/helloworld/artifacts
+        mkdir artifacts
 fi
 
 cd $ARTIFACT_LOCATION/helloworld/dev/dev-esb

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ARTIFACT_LOCATION=${ARTIFACT_LOC}
+IMAGE_RESOURCES=${IMAGE_RESOURCES}
 
 cd $ARTIFACT_LOCATION/helloworld/
 
@@ -34,6 +35,5 @@ cd ../helloworld_common
 mvn clean install
 cp -r target/*  $ARTIFACT_LOCATION/helloworld/artifacts/
 
-
-cp -r $ARTIFACT_LOCATION/helloworld/artifacts/* $ARTIFACT_LOCATION/artifacts/repository/deployment/server/carbonapps/
+cp -r $ARTIFACT_LOCATION/helloworld/artifacts/* $IMAGE_RESOURCES
 rm -rf $ARTIFACT_LOCATION/helloworld/artifacts

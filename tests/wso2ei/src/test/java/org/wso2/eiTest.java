@@ -37,25 +37,21 @@ import java.util.concurrent.TimeUnit;
 // */
 //
 public class eiTest {
-    @Test public void testEndpoint() throws InterruptedException {
-        HttpClient client = new HttpClient();
-        String deployedAPI = "/helloworld";
-        int statusCode = -1;
-        String uri = System.getProperty("endpoint") + deployedAPI;
-        System.out.println(uri);
-        TimeUnit.MINUTES.sleep(5);
-        HttpMethod method = new GetMethod(uri);
+    @Test public static void main(String[] args) {
+        int exitCode=1;
         try {
-            statusCode = client.executeMethod(method);
-        } catch (HttpException e) {
-            System.err.println("Fatal protocol violation: " + e.getMessage());
+            String uri = System.getProperty("endpoint");
+            String carbonUri = "https:"+ uri.split(":")[1] + "/carbon";
+            String command = "curl -k -X GET " + carbonUri;
+            ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+            Process process = processBuilder.start();
+            TimeUnit.SECONDS.sleep(5);
+            exitCode = process.exitValue();
+            System.out.print(exitCode);
+            process.destroy();
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e){
-            System.err.println("Fatal transport error: " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-            method.releaseConnection();
         }
-        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
+        Assert.assertEquals(exitCode, 0);
     }
 }

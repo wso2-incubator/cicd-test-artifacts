@@ -2,7 +2,4 @@
     <artifact name="helloworld" groupId="com.example.helloworld.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/helloworld.xml</file>
     </artifact>
-    <artifact name="todos" groupId="com.example.helloworld.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/proxy-services/todos.xml</file>
-    </artifact>
 </artifacts>

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="development" xmlns="http://ws.apache.org/ns/synapse">
-    <address uri="http://localhost"/>
+    <address uri="http://localhost:8080"/>
 </endpoint>

@@ -2,4 +2,7 @@
     <artifact name="helloworld" groupId="com.example.helloworld.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/helloworld.xml</file>
     </artifact>
+    <artifact name="development" groupId="com.example.helloworld.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/development.xml</file>
+    </artifact>
 </artifacts>

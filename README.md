@@ -1,26 +1,17 @@
-## Sample artifact resources for AWS Pipeline
+## Sample test cases for AWS Pipeline WSO2EI
 
-Sample product artifacts and and sample test cases for WSO2 products. This repository is used as the sample for artifacts repository in WSO2 AWS pipeline..
+Sample product artifacts and and sample test cases for WSO2 Enterprise Integrator. This repository is used as the sample for artifacts repository in WSO2 AWS pipeline for WSO2EI..
 
-#### Add new artifacts 
-* Place the car file in `artifacts/deployment/server/carbonapps/` directory. Follow below naming convention when for artifacts. (c-apps).
-    
-        * Different endpoint c-apps need to included for different environments. For,
-            production environment endpoint c-app: should contain "_production" in the name.
-            eg: helloworld_production_1.0.car
-            
-            staging environment endpoint c-app: should contain "_staging" in the name.
-            eg: helloworld_staging_1.0.car
-            
-            dev environment endpoint c-app: should contain "_dev" in the name.
-            eg: helloworld_dev_1.0.car
-         
-        * Common c-app for all the environments.
-            should contain "_common" in the name
-            eg: helloworld_common_1.0.car
+* A sample scenario test suite implemented using Testng is in `tests/wso2ei/` directory. This run a simple test to validate response code of a rest endpoint.
 
-* A sample scenario test suite implemented using Testng is in `test/{product}/sample-test-suite{product}` directory. This run a 
-simple test to validate response code of a rest endpoint. Use following command to run the test,
+#### Add new test 
+* Place the tests in `test/wso2ei/` directory. Update the testng.xml file to include your test class.
+
+#### Run test suites
+* Use following command to run the tests,
 ```
 mvn test -Dendpoint=<ENDPOINT>
 ```
+
+#### Add new artifacts 
+* Place the artifact source code in the repository. Update `buildArtifact.sh` file with correct paths to artifact code.

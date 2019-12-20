@@ -7,7 +7,7 @@
                 <property expression="$ctx:user_name" name="user_name"/>
             </log>
             <payloadFactory media-type="json">
-                <format>{name: $1, message: "Hello $1, Nice to meet you!"}</format>
+                <format>{name: "WSO2 Enterprise Integrator" , message: "You have successfully deployed helloworld artifact"}</format>
                 <args>
                     <arg evaluator="xml" expression="$ctx:user_name"/>
                 </args>
